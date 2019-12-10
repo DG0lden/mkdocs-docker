@@ -1,0 +1,4 @@
+site_name: Mkdocs docker image
+nav:
+    - Home: README.md
+theme: readthedocs

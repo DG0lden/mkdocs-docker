@@ -1,0 +1,25 @@
+---
+# We put here language Java, although for this project it is not needed.
+# The reason: we want to demonstrate that documentation build works also for non-python environments
+language: java
+
+jdk:
+  - openjdk8
+
+git:
+  submodules: false
+
+script:
+    - mkdir -p docs
+    - cp README.md docs/
+    - docker run -it --rm -v $PWD:/src -w /src -u $(id -u ${USER}):$(id -g ${USER}) g0lden/mkdocs mkdocs build --verbose --clean --strict
+
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github-token: "$GITHUB_PAGES_TOKEN"
+    keep-history: false
+    local-dir: site
+    on:
+      branch: develop
+      condition: ( "$TRAVIS_JDK_VERSION" = "openjdk8" )

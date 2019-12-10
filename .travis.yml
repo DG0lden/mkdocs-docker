@@ -22,5 +22,5 @@ deploy:
     keep-history: false
     local-dir: site
     on:
-      branch: develop
+      branch: master
       condition: ( "$TRAVIS_JDK_VERSION" = "openjdk8" )

@@ -5,6 +5,8 @@ ARG PLANTUML_VERSION=1.2019.7
 
 ENV TZ=Europe/Berlin \
     JAVA_OPTS="-Xmx128m" \
+	LC_ALL=C.UTF-8 \
+	LANG=C.UTF-8 \
     DEBIAN_FRONTEND=noninteractive \
     HOME=/tmp
 

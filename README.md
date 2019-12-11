@@ -16,7 +16,5 @@ https://mkdocs-docker.readthedocs.io/
 
 ## Available tools
 
-* Asciidoctor
 * Mkdocs
-* Pandoc
 * Plantuml
